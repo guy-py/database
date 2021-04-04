@@ -1,0 +1,29 @@
+'''how to use this:
+       data.data stores the data from another file.
+       modify the string in input to change.
+       change the if and elif too.
+       '''
+class data:
+    data = eval(open('datas.py', 'r').read())
+while True:
+    i = input('add or delete(a/d)')
+    if i == 'a':
+        i1 = input('full name : ')
+        i2 = input('birthday : ')
+        i3 = input('age : ')
+        i4 = input('highest score on offline dinosaur game(type "what?!" if you don\'t play it) : ')
+        i5 = input('ic number : ')
+        i6 = input('password : ')
+        data.data[i1] = {'birthday':i2, 'age':i3, 'highest score on offline dinosaur game':i4, 'ic number':i5, 'password':i6}
+        print('done')
+    elif i == 'd':
+        dt = input('full name : ')
+        da = data.data[dt]['password']
+        ta = input('password : ')
+        if da == ta:
+            del data.data[dt]
+            print('done')
+        else:
+            print('wrong full name or password')
+    elif i == 'ght':
+        print(data.data)
